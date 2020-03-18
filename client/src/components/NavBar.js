@@ -4,9 +4,8 @@ const NavBar = () => {
 
 
   return (
-    <div className="primary">
+    <div className="frow">
       NAVBAR
-      <button>this is a button</button>
     </div>
   )
 }
