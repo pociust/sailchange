@@ -5,15 +5,12 @@ const PORT = process.env.PORT || 3001;
 const routes = require('./routes');
 const data = require('./routes/api/data');
 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.use(routes);
-// app.use(data);
-
-app.get('/', (req, res) => {
-  res.send('helowordl')
-})
+app.use(routes);
+app.use(data);
 
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sail_change");
