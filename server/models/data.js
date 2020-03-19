@@ -164,9 +164,12 @@ const dataSchema = new Schema({
     }
 
   }
-});
+}, { collection: 'sail_data' });
 
 
-const Data = mongoose.model("Sail_data", dataSchema)
 
-module.exports = Data;
+const Sail_data = mongoose.model("Sail_data", dataSchema)
+
+
+
+module.exports = Sail_data;
