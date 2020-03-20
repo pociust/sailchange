@@ -4,8 +4,8 @@ const NavBar = () => {
 
 
   return (
-    <div className="frow">
-      NAVBAR
+    <div className="frow navbar">
+      SailChange
     </div>
   )
 }
