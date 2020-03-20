@@ -5,7 +5,7 @@ const BoatSelect = (props) => {
   console.log(props.boat)
   return (
     <>
-      <option boat={props.boat} value={props.boat}> {props.boat.boat.type}</option>
+      <option boat={props.boat} value={props.boat._id}> {props.boat.boat.type}</option>
     </>
   )
 }

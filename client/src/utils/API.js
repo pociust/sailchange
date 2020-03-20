@@ -7,7 +7,7 @@ export default {
     return server.get("/api/data")
   },
 
-  // getAllBoats: function () {
-  //   return server.get
-  // }
+  getBoatInfoById: function (id) {
+    return server.get(`/api/data/${id}`)
+  }
 };
