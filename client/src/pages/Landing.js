@@ -12,20 +12,27 @@ const Landing = () => {
   }, [])
 
 
+  const boatUserSelected = (event) => {
+    console.log(event.target.value.rating)
 
-  console.log('11111', boatData)
+  }
+
+
   return (
     <div className="frow-container mt-50">
-      <div className="frow column-center">
-        Pick your boat
-        <div className="boat-input">
-          {boatData.map(boatinfo => (
-            <BoatSelect boat={boatinfo.boat.type}></BoatSelect>
-          ))}
+      <div className="frow centered-column">
+        <div>
+          Pick your boat
         </div>
-      </div>
-      <div className="frow">
-        Add a boat
+        <select name="boat" id="boat-select" onChange={boatUserSelected} className="boat-select">
+          {boatData.map(boatinfo => (
+            <BoatSelect boat={boatinfo} key={boatinfo._id} boatUserSelected={boatUserSelected}></BoatSelect>
+          ))}
+        </select>
+
+        <div className="frow">
+          Add a boat
+        </div>
       </div>
     </div>
   )
