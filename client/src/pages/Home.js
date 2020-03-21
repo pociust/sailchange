@@ -12,18 +12,30 @@ const Home = () => {
 
   const [boat, setBoat] = useState({});
   const [wind, setWind] = useState("");
-
+  const [styleWind, setStyleWind] = useState()
 
 
   const setSelectBoat = (boat) => {
 
     setBoat({ "name": boat.boat.type })
-    console.log(boat.boat.type)
-
   }
 
   const windSpeed = (event) => {
     setWind(event.target.value)
+
+    if (wind <= 5) {
+      setStyleWind("wind-5")
+    } else if (wind >5 && wind <= 10) {
+      setStyleWind("wind-10")
+    } else if (wind >10 && wind <= 15) {
+      setStyleWind("wind-15")
+    } else if (wind >15 && wind <= 20) {
+      setStyleWind("wind-20")
+    } else if (wind >20 && wind <= 25) {
+      setStyleWind("wind-25")
+    } else {
+      setStyleWind("wind-30")
+    }
 
   }
 
@@ -33,14 +45,14 @@ const Home = () => {
       .catch(err => console.log(err))
   }, [])
 
-
+  console.log('111111', styleWind)
 
   return (
     <div>
       <div>
         <div className="windSpeed-slider">
-          <label for="windSpeed">Wind Speed:{wind}</label>
-          <input type="range" min="0" max="30" id="windSpeed" step="1" onChange={windSpeed}></input>
+          <label>Wind Speed:{wind}</label>
+          <input type="range" min="0" max="30" id="windSpeed" step="1" value={wind} onChange={windSpeed}></input>
         </div>
         hardcode data
       </div>
@@ -48,7 +60,7 @@ const Home = () => {
         <div>{boat.name}</div>
         <Speeds></Speeds>
         <Angles></Angles>
-        <SailChange></SailChange>
+        <SailChange styleWind={styleWind}></SailChange>
       </div>
     </div>
   )
