@@ -11,6 +11,7 @@ const Home = () => {
   const id = url_array[url_array.length - 1];
 
   const [boat, setBoat] = useState({});
+  const [wind, setWind] = useState("");
 
 
 
@@ -21,7 +22,10 @@ const Home = () => {
 
   }
 
+  const windSpeed = (event) => {
+    setWind(event.target.value)
 
+  }
 
   useEffect(() => {
     API.getBoatInfoById(id)
@@ -32,11 +36,20 @@ const Home = () => {
 
 
   return (
-    <div className="container height-100">
-      <div>{boat.name}</div>
-      <Speeds></Speeds>
-      <Angles></Angles>
-      <SailChange></SailChange>
+    <div>
+      <div>
+        <div className="windSpeed-slider">
+          <label for="windSpeed">Wind Speed:{wind}</label>
+          <input type="range" min="0" max="30" id="windSpeed" step="1" onChange={windSpeed}></input>
+        </div>
+        hardcode data
+      </div>
+      <div className="container height-100">
+        <div>{boat.name}</div>
+        <Speeds></Speeds>
+        <Angles></Angles>
+        <SailChange></SailChange>
+      </div>
     </div>
   )
 }
