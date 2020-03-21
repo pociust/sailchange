@@ -1,6 +1,16 @@
 @import './variables'
 @import '../../node_modules/frow/frow'
 
+
+
+.windSpeed-slider
+  width: 100px
+
+.landing-container 
+  height: 50vh
+  background-color: #E1F1FC
+  color: #F29755
+
 .container 
   display: grid
   grid-template-columns: repeat(5, 1fr)
@@ -10,6 +20,7 @@
   text-align: center
   // height: 100%
   // margin-bottom: 25px
+  
 
   div
     margin-top: 15px
@@ -38,16 +49,15 @@
     grid-column: 1/2
     grid-row: 4/5
 
+  
+  
   .item-sailchange
     grid-column: 2/5
     grid-row: 2/5
     border: 1px solid black
     background-color: #8FCEFF
 
-.landing-container 
-  height: 50vh
-  background-color: #E1F1FC
-  color: #F29755
+
 
 
 .markers
@@ -68,8 +78,30 @@
     background-color: #6200ff
     font-size: 50px
 
-.boat-select
-  width: 200px
+.wind-arrows
+  width: 0
+  height: 0
+  border-left: 5px solid transparent
+  border-right: 5px solid transparent
+  border-bottom: 5px solid black
 
-.windSpeed-slider
-  width: 100px
+
+  &.wind-5
+    border-bottom: 5px solid $wind-5
+
+  &.wind-10
+    border-bottom: 5px solid $wind-10
+
+  &.wind-15
+   border-bottom: 5px solid $wind-15
+
+  &.wind-20
+    border-bottom: 5px solid $wind-20
+  &.wind-25
+    border-bottom: 5px solid $wind-25
+
+  &.wind-30
+    border-bottom: 5px solid $wind-30
+        
+
+
