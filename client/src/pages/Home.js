@@ -3,7 +3,7 @@ import Speeds from '../components/Speeds'
 import Angles from "../components/Angles.js"
 import SailChange from '../components/SailChange'
 import API from '../utils/API';
-import { CircleSlider } from "react-circle-slider"
+// import { CircleSlider } from "react-circle-slider"
 
 
 const Home = () => {

@@ -2,6 +2,9 @@
 @import '../../node_modules/frow/frow'
 
 
+.navbar
+  background: #e3f3fe
+  height: 50px 
 
 .windSpeed-slider
   width: 100px
@@ -59,22 +62,29 @@
     border: 1px solid black
     background-color: #8FCEFF
 
-
-
+.sail-change-container
+  display: grid
+  grid-template-columns: repeat(5, 1fr)
+  grid-template-rows: repeat(5, 1fr)
+  grid-gap: 1em
 
 .markers
   background: #FFB700
+  grid-column: 3/4
+  grid-row: 1/2
 
-.navbar
-  background: #e3f3fe
-  height: 50px
+
 
 .lines-to-mark
   background-color: #FF009D
+  grid-column: 3/4
+  grid-row: 3/4
 
 
 .boat-design
   background-color: #d4d4d4
+  grid-column: 3/4
+  grid-row: 5/6
 
   span
     background-color: #6200ff
@@ -83,29 +93,69 @@
 .wind-arrows
   width: 0
   height: 0
-  border-left: 5px solid transparent
-  border-right: 5px solid transparent
-  border-bottom: 5px solid black
-
+  border-left: 8px solid transparent
+  border-right: 8px solid transparent
+  border-bottom: 8px solid black
 
   &.wind-5
-    border-bottom: 5px solid $wind-5
+    border-bottom: 8px solid $wind-5
 
   &.wind-10
-    border-bottom: 5px solid $wind-10
+    border-bottom: 8px solid $wind-10
 
   &.wind-15
-    border-bottom: 5px solid $wind-15
+    border-bottom: 8px solid $wind-15
 
   &.wind-20
-    border-bottom: 5px solid $wind-20
+    border-bottom: 8px solid $wind-20
   &.wind-25
-    border-bottom: 5px solid $wind-25
+    border-bottom: 8px solid $wind-25
 
   &.wind-30
-    border-bottom: 5px solid $wind-30
-        
-.rotated
-  transform: rotate(45deg)
+    border-bottom: 8px solid $wind-30
+
+.arrow1
+  grid-column: 1/2
+  grid-row: 1/2
+  
+.arrow2
+  grid-column: 3/4
+  grid-row: 1/2
+
+.arrow3
+  grid-column: 5/6
+  grid-row: 1/2
+
+.arrow4
+  grid-column: 1/2
+  grid-row: 3/4
+
+.arrow5
+  grid-column: 3/4
+  grid-row: 3/4
+
+.arrow6
+  grid-column: 5/6
+  grid-row: 3/4
+
+.arrow7
+  grid-column: 1/2
+  grid-row: 5/6
+
+.arrow8
+  grid-column: 3/4
+  grid-row: 5/6
+
+.arrow9
+  grid-column: 5/6
+  grid-row: 5/6
+
+
+  
+
+    
+
+
+
 
 
