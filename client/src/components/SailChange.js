@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 
 
 const SailChange = (props) => {
+  console.log('direction', props.windDirection)
+
 
   return (
     <>
@@ -13,7 +15,7 @@ const SailChange = (props) => {
 
         <div className="boat-design">boat<span>sail</span></div>
 
-        <div className={`wind-arrows ${props.styleWind}`}> arrows</div>
+        <div className={`wind-arrows ${props.styleWind} rotated`}> arrows</div>
       </div>
 
     </>
