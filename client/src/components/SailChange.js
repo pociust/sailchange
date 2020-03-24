@@ -12,11 +12,13 @@ const SailChange = (props) => {
   return (
     <>
       <div className="item-sailchange sail-change-container">
-        <div className="markers">orangecone</div>
+        <div className="markers mark1"></div>
+        <div className="markers mark2"></div>
 
-        <div className="lines-to-mark">red line</div>
 
-        <div className="boat-design">boat<span>sail</span></div>
+        <div className="lines-to-mark"></div>
+
+        <div className="boat-design"><span>spinnaker</span></div>
 
         <div className={`wind-arrows ${props.styleWind} arrow1`} style={arrowDirection}></div>
         <div className={`wind-arrows ${props.styleWind} arrow2`} style={arrowDirection}></div>
@@ -25,8 +27,6 @@ const SailChange = (props) => {
         <div className={`wind-arrows ${props.styleWind} arrow5`} style={arrowDirection}></div>
         <div className={`wind-arrows ${props.styleWind} arrow6`} style={arrowDirection}></div>
         <div className={`wind-arrows ${props.styleWind} arrow7`} style={arrowDirection}></div>
-        <div className={`wind-arrows ${props.styleWind} arrow8`} style={arrowDirection}></div>
-        <div className={`wind-arrows ${props.styleWind} arrow9`} style={arrowDirection}></div>
 
       </div>
 
