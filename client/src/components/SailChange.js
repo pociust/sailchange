@@ -12,8 +12,8 @@ const SailChange = (props) => {
   return (
     <>
       <div className="item-sailchange sail-change-container">
-        <div className="markers mark1"></div>
-        <div className="markers mark2"></div>
+        <div className="markers mark1">1</div>
+        <div className="markers mark2">2</div>
 
 
         <div className="lines-to-mark"></div>
