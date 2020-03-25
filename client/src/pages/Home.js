@@ -15,6 +15,9 @@ const Home = () => {
   const [wind, setWind] = useState("");
   const [styleWind, setStyleWind] = useState()
   const [windDirection, setWindDirection] = useState();
+  const [windAngleToNextMark, setwindAngleToNextMark] = useState();
+  const [styleWindATNM, setstyleWindATNM] = useState();
+
 
 
   const setSelectBoat = (boat) => {
@@ -24,15 +27,15 @@ const Home = () => {
 
   const windSpeed = (event) => {
 
-    if (wind <= 5) {
+    if (event.target.value <= 5) {
       setStyleWind("wind-5")
-    } else if (wind > 5 && wind <= 10) {
+    } else if (event.target.value > 5 && event.target.value <= 10) {
       setStyleWind("wind-10")
-    } else if (wind > 10 && wind <= 15) {
+    } else if (event.target.value > 10 && event.target.value <= 15) {
       setStyleWind("wind-15")
-    } else if (wind > 15 && wind <= 20) {
+    } else if (event.target.value > 15 && event.target.value <= 20) {
       setStyleWind("wind-20")
-    } else if (wind > 20 && wind <= 25) {
+    } else if (event.target.value > 20 && event.target.value <= 25) {
       setStyleWind("wind-25")
     } else {
       setStyleWind("wind-30")
@@ -45,6 +48,72 @@ const Home = () => {
   const windDirectionInput = (event) => {
 
     setWindDirection(event.target.value)
+  }
+
+  const angleToNextMark = (event) => {
+
+    let degrees = event.target.value
+    // console.log(degrees)
+
+
+    // if (degrees <= -120) {
+    //   setstyleWindATNM("mark-140")
+
+    // } else if (degrees > -120 && degrees <= -100) {
+
+    //   setstyleWindATNM("mark-120")
+
+    // } else if (degrees > -100 && degrees <= -80) {
+
+    //   setstyleWindATNM("mark-100")
+
+    // } else if (degrees > -80 && degrees <= -60) {
+
+    //   setstyleWindATNM("mark-80")
+
+    // } else if (degrees > -60 && degrees <= -40) {
+
+    //   setstyleWindATNM("mark-60")
+
+    // } else if (degrees > -40 && degrees <= -20) {
+
+    //   setstyleWindATNM("mark-40")
+
+    // } else if (degrees > -20 && degrees < 0) {
+
+    //   setstyleWindATNM("mark-20")}
+
+    if (degrees < 20 && degrees >= 0) {
+
+      setstyleWindATNM("mark20")
+
+    } else if (degrees < 40 && degrees >= 20) {
+
+      setstyleWindATNM("mark40")
+
+    } else if (degrees < 60 && degrees >= 40) {
+
+      setstyleWindATNM("mark60")
+
+    } else if (degrees < 80 && degrees >= 60) {
+
+      setstyleWindATNM("mark80")
+
+    } else if (degrees < 100 && degrees >= 80) {
+
+      setstyleWindATNM("mark100")
+
+    } else if (degrees < 120 && degrees >= 90) {
+
+      setstyleWindATNM("mark120")
+
+    } else if (degrees <= 140 && degrees >= 120) {
+
+      setstyleWindATNM("mark140")
+    }
+
+
+    setwindAngleToNextMark(degrees)
   }
 
 
@@ -66,6 +135,11 @@ const Home = () => {
           <input type="number" min="0" max="360" id="windAngle" onChange={windDirectionInput}></input>
           {/* <CircleSlider></CircleSlider> */}
         </div>
+        <div>
+          <label>Angle to next mark: {windAngleToNextMark}</label>
+          <input type="range" min="0" max="140" onChange={angleToNextMark}></input>
+        </div>
+
 
         hardcode data
       </div>
@@ -73,7 +147,7 @@ const Home = () => {
         <div>{boat.name}</div>
         <Speeds></Speeds>
         <Angles></Angles>
-        <SailChange styleWind={styleWind} windDirection={windDirection}></SailChange>
+        <SailChange styleWind={styleWind} windDirection={windDirection} styleWindATNM={styleWindATNM}></SailChange>
       </div>
     </div>
   )

@@ -2,7 +2,6 @@ import React from "react"
 
 
 const SailChange = (props) => {
-  console.log('direction', props.windDirection)
 
   const arrowDirection = {
     transform: `rotate(${props.windDirection}deg)`
@@ -13,7 +12,7 @@ const SailChange = (props) => {
     <>
       <div className="item-sailchange sail-change-container">
         <div className="markers mark1">1</div>
-        <div className="markers mark2">2</div>
+        <div className={`markers ${props.styleWindATNM}`}>2</div>
 
 
         <div className="lines-to-mark"></div>
