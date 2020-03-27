@@ -3,10 +3,10 @@ import Speeds from '../components/Speeds'
 import Angles from "../components/Angles.js"
 import SailChange from '../components/SailChange'
 import API from '../utils/API';
-// import { CircleSlider } from "react-circle-slider"
 
 
 const Home = () => {
+
   const full_url = document.URL; // Get current url
   const url_array = full_url.split('/'); // Split the string into an array with / as separator
   const id = url_array[url_array.length - 1];
@@ -17,6 +17,7 @@ const Home = () => {
   const [windDirection, setWindDirection] = useState();
   const [windAngleToNextMark, setwindAngleToNextMark] = useState();
   const [styleWindATNM, setstyleWindATNM] = useState();
+
 
 
 
@@ -146,7 +147,7 @@ const Home = () => {
       <div className="container height-100">
         <div>{boat.name}</div>
         <Speeds wind={wind}></Speeds>
-        <Angles windDirection={windDirection}></Angles>
+        <Angles windDirection={windDirection} windAngleToNextMark={windAngleToNextMark}></Angles>
         <SailChange styleWind={styleWind} windDirection={windDirection} styleWindATNM={styleWindATNM}></SailChange>
       </div>
     </div>
