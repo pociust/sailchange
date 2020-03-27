@@ -10,7 +10,13 @@ const Angles = (props) => {
             TWA:
           </div>
           <div>
-            {props.windDirection}°
+            {props.trueWindAngle}°
+          </div>
+          <div>
+            Wind angle after mark:
+          </div>
+          <div>
+            {}°
           </div>
         </div>
       </div>

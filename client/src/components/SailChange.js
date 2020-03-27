@@ -25,6 +25,7 @@ const SailChange = (props) => {
         <div className={`wind-arrows ${props.styleWind} arrow1`} style={arrowDirection}></div>
         <div className={`wind-arrows ${props.styleWind} arrow2`} style={arrowDirection}></div>
         <div className={`wind-arrows ${props.styleWind} arrow3`} style={arrowDirection}></div>
+        <div className="compass-wind-direction">{props.windDirection}°</div>
         <div className={`wind-arrows ${props.styleWind} arrow4`} style={arrowDirection}></div>
         <div className={`wind-arrows ${props.styleWind} arrow5`} style={arrowDirection}></div>
         <div className={`wind-arrows ${props.styleWind} arrow6`} style={arrowDirection}></div>

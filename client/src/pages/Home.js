@@ -17,6 +17,7 @@ const Home = () => {
   const [windDirection, setWindDirection] = useState();
   const [windAngleToNextMark, setwindAngleToNextMark] = useState();
   const [styleWindATNM, setstyleWindATNM] = useState();
+  const [trueWindAngle, setTrueWindAngle] = useState();
 
 
 
@@ -49,6 +50,13 @@ const Home = () => {
   const windDirectionInput = (event) => {
 
     setWindDirection(event.target.value)
+
+    if (event.target.value >= 180) {
+      setTrueWindAngle((event.target.value) - 180)
+    } else {
+      setTrueWindAngle(360 - (180 - event.target.value))
+    }
+    console.log(((windAngleToNextMark) - 360) - (event.target.value))
   }
 
   const angleToNextMark = (event) => {
@@ -118,6 +126,7 @@ const Home = () => {
   }
 
 
+
   useEffect(() => {
     API.getBoatInfoById(id)
       .then(res => setSelectBoat(res.data))
@@ -147,7 +156,7 @@ const Home = () => {
       <div className="container height-100">
         <div>{boat.name}</div>
         <Speeds wind={wind}></Speeds>
-        <Angles windDirection={windDirection} windAngleToNextMark={windAngleToNextMark}></Angles>
+        <Angles windAngleToNextMark={windAngleToNextMark} trueWindAngle={trueWindAngle}></Angles>
         <SailChange styleWind={styleWind} windDirection={windDirection} styleWindATNM={styleWindATNM}></SailChange>
       </div>
     </div>
