@@ -26,6 +26,7 @@ const Landing = (props) => {
             Pick your boat
           </div>
           <select name="boat" id="boat-select" onChange={props.boatUserSelected} className="boat-select">
+            <option value="">Select your boat</option>
             {props.boatData.map(boatinfo => (
               <BoatSelect boat={boatinfo} key={boatinfo._id} ></BoatSelect>
             ))}

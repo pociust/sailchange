@@ -127,7 +127,7 @@ const Home = () => {
     <div>
       <div className="frow justify-around">
         <div className="windSpeed-slider">
-          <label>Wind Speed:{wind}</label>
+          <label>Wind Speed:</label>
           <input type="range" min="0" max="30" id="windSpeed" step="1" value={wind} onChange={windSpeed}></input>
         </div>
         <div className="wind-direction-container">
@@ -145,8 +145,8 @@ const Home = () => {
       </div>
       <div className="container height-100">
         <div>{boat.name}</div>
-        <Speeds></Speeds>
-        <Angles></Angles>
+        <Speeds wind={wind}></Speeds>
+        <Angles windDirection={windDirection}></Angles>
         <SailChange styleWind={styleWind} windDirection={windDirection} styleWindATNM={styleWindATNM}></SailChange>
       </div>
     </div>
