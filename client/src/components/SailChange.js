@@ -1,5 +1,5 @@
 import React from "react"
-
+import Spinnaker from "./Spinnaker"
 
 const SailChange = (props) => {
 
@@ -20,7 +20,9 @@ const SailChange = (props) => {
 
         <div className="lines-to-mark"></div>
 
-        <div className="boat-design"><span>spinnaker</span></div>
+        
+        <Spinnaker></Spinnaker>
+
 
         <div className={`wind-arrows ${props.styleWind} arrow1`} style={arrowDirection}></div>
         <div className={`wind-arrows ${props.styleWind} arrow2`} style={arrowDirection}></div>

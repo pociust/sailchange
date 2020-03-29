@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Speeds from '../components/Speeds'
-import Angles from "../components/Angles.js"
-import SailChange from '../components/SailChange'
+import Speeds from '../components/Speeds';
+import Angles from '../components/Angles.js';
+import SailChange from '../components/SailChange';
+import Spinnaker from '../components/Spinnaker';
 import API from '../utils/API';
+
 
 
 const Home = () => {
