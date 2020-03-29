@@ -13,10 +13,10 @@ const Angles = (props) => {
             {props.trueWindAngle}°
           </div>
           <div>
-            Wind angle after mark:
+            Wind angle after mark #1:
           </div>
           <div>
-            {}°
+            {props.angleToNextMark}°
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@ const Angles = (props) => {
             Angle after mark to next mark:
           </div>
           <div>
-            {props.windAngleToNextMark}°
+            {props.angleToNextMark}°
           </div>
         </div>
       </div>

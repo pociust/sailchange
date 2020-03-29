@@ -15,9 +15,10 @@ const Home = () => {
   const [wind, setWind] = useState("");
   const [styleWind, setStyleWind] = useState()
   const [windDirection, setWindDirection] = useState();
-  const [windAngleToNextMark, setwindAngleToNextMark] = useState();
+  const [angleToNextMark, setAngleToNextMark] = useState();
   const [styleWindATNM, setstyleWindATNM] = useState();
   const [trueWindAngle, setTrueWindAngle] = useState();
+  const [windAngleAfterMark, setWindAngleAfterMark] = useState();
 
 
 
@@ -50,16 +51,23 @@ const Home = () => {
   const windDirectionInput = (event) => {
 
     setWindDirection(event.target.value)
+    setTrueWindAngle(event.target.value)
 
-    if (event.target.value >= 180) {
-      setTrueWindAngle((event.target.value) - 180)
-    } else {
-      setTrueWindAngle(360 - (180 - event.target.value))
-    }
-    console.log(((windAngleToNextMark) - 360) - (event.target.value))
+
+
+    let changeInTWA = (event.target.value + angleToNextMark)
+
+
+    // if (event.target.value >= 180) {
+    //   setWindAngleAfterMark((event.target.value) - (180 - angleToNextMark))
+    // } else {
+    //   setTrueWindAngle(360 - (180 - event.target.value))
+    //   setWindAngleAfterMark(360 - (180 - event.target.value))
+
+    // }
   }
 
-  const angleToNextMark = (event) => {
+  const changingAngleToNextMark = (event) => {
 
     let degrees = event.target.value
     // console.log(degrees)
@@ -122,9 +130,8 @@ const Home = () => {
     }
 
 
-    setwindAngleToNextMark(degrees)
+    setAngleToNextMark(degrees)
   }
-
 
 
   useEffect(() => {
@@ -146,8 +153,8 @@ const Home = () => {
           {/* <CircleSlider></CircleSlider> */}
         </div>
         <div>
-          <label>Angle to next mark: {windAngleToNextMark}</label>
-          <input type="range" min="0" max="140" onChange={angleToNextMark}></input>
+          <label>Angle to next mark: {angleToNextMark}</label>
+          <input type="range" min="0" max="140" onChange={changingAngleToNextMark}></input>
         </div>
 
 
@@ -156,7 +163,7 @@ const Home = () => {
       <div className="container height-100">
         <div>{boat.name}</div>
         <Speeds wind={wind}></Speeds>
-        <Angles windAngleToNextMark={windAngleToNextMark} trueWindAngle={trueWindAngle}></Angles>
+        <Angles angleToNextMark={angleToNextMark} trueWindAngle={trueWindAngle} windAngleAfterMark={windAngleAfterMark}></Angles>
         <SailChange styleWind={styleWind} windDirection={windDirection} styleWindATNM={styleWindATNM}></SailChange>
       </div>
     </div>
