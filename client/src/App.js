@@ -17,13 +17,8 @@ function App() {
 
 
   function boatUserSelected(event) {
-    // let boatId = event.target.value
-    // boatId = useParams()
 
     window.location.replace(`/home/${event.target.value}`);
-    // console.log(event.target.value)
-    // setUserSelected(event.target.value)
-    // browserHistory.replace('/home');
 
   }
 
