@@ -23,6 +23,7 @@ const Home = () => {
 
 
 
+
   const setSelectBoat = (boat) => {
 
     setBoat({ "name": boat.boat.type })
@@ -52,27 +53,13 @@ const Home = () => {
 
     setWindDirection(event.target.value)
     setTrueWindAngle(event.target.value)
-
-
-
-    let changeInTWA = (event.target.value + angleToNextMark)
-
-
-    // if (event.target.value >= 180) {
-    //   setWindAngleAfterMark((event.target.value) - (180 - angleToNextMark))
-    // } else {
-    //   setTrueWindAngle(360 - (180 - event.target.value))
-    //   setWindAngleAfterMark(360 - (180 - event.target.value))
-
-    // }
   }
 
   const changingAngleToNextMark = (event) => {
 
     let degrees = event.target.value
-    // console.log(degrees)
 
-
+    //keeping this in incase I want to have a round mark to starbord
     // if (degrees <= -120) {
     //   setstyleWindATNM("mark-140")
 
@@ -129,6 +116,13 @@ const Home = () => {
       setstyleWindATNM("mark140")
     }
 
+    let changeInTWA = (parseInt(windDirection) + parseInt(degrees))
+
+    if (changeInTWA > 360 ) {
+      setWindAngleAfterMark( changeInTWA - 360)
+    } else {
+      setWindAngleAfterMark(changeInTWA)
+    }
 
     setAngleToNextMark(degrees)
   }
