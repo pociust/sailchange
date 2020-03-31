@@ -24,6 +24,31 @@ const Home = () => {
 
 
 
+  const firstSpinnakerDecider = () => {
+    //angles for doyle sails, might want to add other makers rules may need to break this to a utils?
+    if (wind <= 9 && wind > 3) {
+      if (trueWindAngle >= 95 && trueWindAngle < 140) {
+        console.log("a1")
+      } else {
+        console.log('keep up the jib')
+      }
+    } else if (wind > 9 && wind <= 20) {
+      if (trueWindAngle >= 140 && trueWindAngle < 150) {
+        console.log("a2")
+      } else if (wind >= 14) {
+        if (trueWindAngle >= 125 && trueWindAngle >= 138) {
+          console.log("a3")
+        } else {
+          console.log("keep up the jib or buy better sails")
+        }
+      }
+    } else if (wind >= 20 && wind < 30) {
+      if (trueWindAngle > 138 && trueWindAngle <= 160) {
+        console.log("a4")
+      }
+    }
+  }
+
 
 
   const setSelectBoat = (boat) => {
@@ -136,6 +161,7 @@ const Home = () => {
       .catch(err => console.log(err))
   }, [])
 
+  firstSpinnakerDecider()
   return (
     <div>
       <div className="frow justify-around">
