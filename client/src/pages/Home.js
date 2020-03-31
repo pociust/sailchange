@@ -120,8 +120,8 @@ const Home = () => {
 
     let changeInTWA = (parseInt(windDirection) + parseInt(degrees))
 
-    if (changeInTWA > 360 ) {
-      setWindAngleAfterMark( changeInTWA - 360)
+    if (changeInTWA > 360) {
+      setWindAngleAfterMark(changeInTWA - 360)
     } else {
       setWindAngleAfterMark(changeInTWA)
     }
@@ -157,7 +157,17 @@ const Home = () => {
         hardcode data
       </div>
       <div className="container height-100">
-        <div>{boat.name}</div>
+        <div className="shadow-dark mt-15">
+          <div>{boat.name}</div>
+          <div className="frow row-around">
+            <div className="sail-1">Sail #1
+              <div>daw</div>
+            </div>
+            <div className="sail-2">Sail Change
+              <div>wdade</div>
+            </div>
+          </div>
+        </div>
         <Speeds wind={wind}></Speeds>
         <Angles angleToNextMark={angleToNextMark} trueWindAngle={trueWindAngle} windAngleAfterMark={windAngleAfterMark}></Angles>
         <SailChange styleWind={styleWind} windDirection={windDirection} styleWindATNM={styleWindATNM}></SailChange>

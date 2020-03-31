@@ -4,7 +4,9 @@ const Spinnaker = () => {
 
   return (
     <>
-      <div className="boat-design"><span>spinnaker</span></div>
+      <div className="boat-design">
+        <div className="spinnaker">spin</div>
+      </div>
     </>
   )
 }
