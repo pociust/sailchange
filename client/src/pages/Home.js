@@ -30,7 +30,7 @@ const Home = () => {
       if (trueWindAngle >= 95 && trueWindAngle < 140) {
         console.log("a1")
       } else {
-        console.log('keep up the jib')
+        console.log('Keep up the jib')
       }
     } else if (wind > 9 && wind <= 20) {
       if (trueWindAngle >= 140 && trueWindAngle < 150) {
